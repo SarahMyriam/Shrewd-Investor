@@ -5,8 +5,11 @@ const db = require("./models");
 const seed = require("./utils/seed");
 const errorHandler = require("./utils/errorHandler");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express();
+
+require('dotenv').config();
+console.log(process.env.API_KEY);
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
