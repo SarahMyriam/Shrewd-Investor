@@ -1,13 +1,33 @@
 body {
   width: 99%;
   height: 900px;
-  background-color: #d7d7d7ec;
+  background-color:#212121;
   /* color: white; */
 
 }
 
-#top-bar {
-  margin: 28px 0px 28px 0px;
+.jumbotron {
+  background-color: #EEEEEE;
+  color: #0d7377;
+  text-align: center;
+  font: 20px;
+}
+
+.stockCard {
+  float: left;
+  width: 30%;
+  border: 5pt solid #32e0c4;
+  margin: 5pt;
+  align-items: center;
+}
+
+.stockImg {
+  width: 150px;
+  height: 150px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 

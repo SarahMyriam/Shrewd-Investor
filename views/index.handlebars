@@ -1,17 +1,58 @@
-<div class="col-md-12 "
-     id="top-bar">
-   <h1> Sequelize box </h1>
+{{!-- Jumbotron with logo --}}
+<div class="jumbotron jumbotron-fluid">
+<div class="container">
+   <h1 class="display-4 Schrewdtitle" > <i class="fas fa-dollar-sign"></i> Shrewd Investor - an Online Investing Game! <i class="fas fa-dollar-sign"></i></h1>
+</div>
 </div>
 
-<div class="container">
-   <div class="row">
+
+<div class="card stockCard">
+<img class="stockImg" src="./assets/images/cocacola_logo.png" class="card-img-top" alt="...">
+   <div class="card-body">
+   <h5 class="card-title">Biogen</h5>
+</div>
+<ul class="list-group list-group-flush">
+   <li class="list-group-item">Current Price: {{stockPrice}}</li>
+   <li class="list-group-item"> Today's Change: {{stockUpDown}}</li>
+   <li class="list-group-item" button type="button">Add to Favorites </li>
+   <li class="list-group-item" button type="button">Invest</li>
+</ul>
+</div>
 
 
-      {{!-- view cooment  --}}
-      {{> viewComments}}
+<div class="card stockCard">
+<img class="stockImg" src="./assets/images/Biogen-Logo.png" class="card-img-top" alt="...">
+   <div class="card-body">
+   <h5 class="card-title">Biogen</h5>
+</div>
+<ul class="list-group list-group-flush">
+   <li class="list-group-item">Current Price: {{stockPrice}}</li>
+   <li class="list-group-item"> Today's Change: {{stockUpDown}}</li>
+   <li class="list-group-item" button type="button">Add to Favorites </li>
+   <li class="list-group-item" button type="button">Invest</li>
+</ul>
+</div>
+
+
+<div class="card stockCard">
+<img class="stockImg"src="./assets/images/teslalogo.jpg" class="card-img-top" alt="...">
+   <div class="card-body">
+   <h5 class="card-title">Biogen</h5>
+</div>
+<ul class="list-group list-group-flush">
+   <li class="list-group-item">Current Price: {{stockPrice}}</li>
+   <li class="list-group-item"> Today's Change: {{stockUpDown}}</li>
+   <li class="list-group-item" button type="button">Add to Favorites </li>
+   <li class="list-group-item" button type="button">Invest</li>
+</ul>
+</div>
+
+
+      {{!-- view stockchoice  --}}
+      {{!-- {{> viewComments}} --}}
 
       {{!-- post comment --}}
-      {{> postComments}}
+      {{!-- {{> postComments}} --}}
 
    </div>
 </div>
