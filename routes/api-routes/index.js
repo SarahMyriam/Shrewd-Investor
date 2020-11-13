@@ -1,7 +1,7 @@
 const express = require("express");
-const commentsRoute = require("./comments");
+const stocksRoute = require("./stocks");
 const router = express.Router();
 
-router.use("/comments", commentsRoute);
+router.use("/stocks", stocksRoute);
 
 module.exports = router;
