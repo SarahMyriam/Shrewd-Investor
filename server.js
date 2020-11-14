@@ -1,4 +1,6 @@
 const express = require("express");
+var session = require("express-session");
+var passport = require("./config/passport");
 const apiRoutes = require("./routes/api-routes");
 const htmlRoutes = require("./routes/html-routes");
 const db = require("./models");
@@ -14,6 +16,14 @@ app.use(express.static("public"));
 // Parse application body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Requiring our routes
+require("./routes/userHtmlRoutes.js")(app);
+require("./routes/userApiRoute.js")(app);
 
 const exphbs = require("express-handlebars");
 
