@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const commentsRoute = require("./comments");
+// const commentsRoute = require("./comments");
 const loginRoute = require("../userHtmlRoutes");
 
 // get route -> index
