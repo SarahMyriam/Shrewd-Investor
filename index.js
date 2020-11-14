@@ -10,10 +10,14 @@ const config = require(__dirname + "/../config/config.json")[env];
 const db = {};
 
 let sequelize;
+console.log("start config");
 if (config.use_env_variable) {
+	console.log('api ' + config.use_env_variable);
 	sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
+	console.log('local '+ process.env.LOCAL_MYSQL_PASS + ' ' + config.database + ' ' + config.username);
 	sequelize = new Sequelize(config.database, config.username, process.env.LOCAL_MYSQL_PASS, config);
+	
 }
 
 fs.readdirSync(__dirname)
