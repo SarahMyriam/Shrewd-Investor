@@ -1,8 +1,13 @@
 ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
   
   ## Shrewd Investor 
-  https://dashboard.heroku.com/apps/shrewd-investor
-  
+  https://shrewd-investor.herokuapp.com/
+
+![]("https://github.com/SarahMyriam/Shrewd-Investor/blob/main/public%2Fassets%2Fimages%2Fshrewdindexpg.png")
+
+![]("https://github.com/SarahMyriam/Shrewd-Investor/blob/main/public%2Fassets%2Fimages%2Fsignup.png")
+
+![]("https://github.com/SarahMyriam/Shrewd-Investor/blob/main/public%2Fassets%2Fimages%2Flogin.png")
 
   
 
