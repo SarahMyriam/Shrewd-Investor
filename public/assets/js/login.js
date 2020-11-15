@@ -9,10 +9,11 @@ $(document).ready(() => {
       event.preventDefault();
       const userData = {
          email: emailInput.val().trim(),
-         password: passwordInput.val().trim()
+         password: passwordInput.val().trim(),
       };
 
       if (!userData.email || !userData.password) {
+         alert("Please fill out all the fields!");
          return;
       }
 
