@@ -4,7 +4,7 @@ const passport = require("./config/passport");
 const apiRoutes = require("./routes/api-routes");
 const htmlRoutes = require("./routes/html-routes");
 const db = require("./models");
-const seed = require("./utils/seed");
+// const seed = require("./utils/seed");
 const errorHandler = require("./utils/errorHandler");
 
 const PORT = process.env.PORT || 3000;
@@ -45,9 +45,9 @@ app.use(htmlRoutes);
 app.use(errorHandler);
 
 // drops all tables on eevery restart
-db.sequelize.sync({ force: true }).then(async () => {
+db.sequelize.sync().then(async () => {
    // seed db
-   await seed(db.Test);
+   // await seed(db.Test);
 
    app.listen(PORT, () => {
       console.log("🌎 => live on http://localhost:%s", PORT);
