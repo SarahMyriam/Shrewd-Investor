@@ -36,4 +36,11 @@ module.exports = function(app) {
       //  .then()
    });
 
+   app.get("/portfolio", (req, res) => {
+      res.render("portfolio");
+      //  table.findAll()
+      //  .then()
+   });
+
+
 };
