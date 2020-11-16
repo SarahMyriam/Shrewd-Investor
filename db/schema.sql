@@ -5,7 +5,7 @@ USE stock_db;
 
 CREATE TABLE stocks (
   id INT AUTO_INCREMENT NOT NULL,
-  comp_name VARCHAR(255),
+  stock_name VARCHAR(255),
   stock_symbol VARCHAR(255),
   price INT,
   change_dollar DECIMAL,
