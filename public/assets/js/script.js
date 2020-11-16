@@ -34,4 +34,25 @@ $(document).ready(() => {
    });
 
 
+
+   //New feature: save API data as a sequelize object - not working
+   // $("#add1").on("click", () => {
+   //    var stock = {
+   //       name: 
+   //    }
+   // });
+
+   // app.post("/api/stock_data", (req, res) => {
+   //    console.log(req.body);
+   //    db.Stock.create({
+   //       name: data.companyName,
+   //       price: data.iexRealtimePrice
+   //    })
+   //       .then((dbStock) => {
+   //          res.json(dbStock);
+   //       });
+   // });
+   // // console.log(data.changePercent);
+   // console.log("done done done!");
+
 });
