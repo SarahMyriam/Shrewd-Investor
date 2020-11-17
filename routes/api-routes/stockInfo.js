@@ -78,30 +78,4 @@ router.get("/BIIB", (req, res, next) => {
       });
 });
 
-router.post("/add/stocks", isAuthenticated, (req, res)=> {
-   //req.body.UserId = req.session.passport.user.id;
-   const favoriteObject = {
-      name: req.body.name,
-      price: req.body.currentPrice,
-      changePercent: req.body.dailyChange
-   }
-   db.Stock.create(favoriteObject).then((results)=> {
-      res.json(results);
-   });
-   
-});
-
-router.get("/", isAuthenticated, (req, res)=> {
-   const userId = req.session.passport.user.id;
-   db.User.findOne({
-      where: {
-         id: userId
-      }, 
-      include: [db.Stock]
-   }).then((favorites)=> {
-      res.json(results);
-      res.render("portfolio", {favorites_data: favorites})
-   });
-});
-
-module.exports = router;
+module.exports=router;
