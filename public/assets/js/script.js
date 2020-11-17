@@ -1,3 +1,5 @@
+const { combineTableNames } = require("sequelize/types/lib/utils");
+
 $(document).ready(() => {
 
    function displayStocks(stockName, priceId, changepriceId) {
@@ -19,19 +21,19 @@ $(document).ready(() => {
 
 
 
-   $(".portfolioBtn").on("click", (event) => {
-      event.preventDefault();
-      console.log("I was clicked!!!");
-      // const stockId = $(this).children(".stock_id").val();
-      // console.log(stockId);
-      // $.ajax({
-      //    method: "PUT",
-      //    url: "/portfolio/" + stockId
-      // }).then((data) => {
-      //    console.log(data);
-      window.location.replace("/portfolio");
-      // });
-   });
+   // $(".portfolioBtn").on("click", (event) => {
+   //    event.preventDefault();
+   //    console.log("I was clicked!!!");
+   //    // const stockId = $(this).children(".stock_id").val();
+   //    // console.log(stockId);
+   //    // $.ajax({
+   //    //    method: "PUT",
+   //    //    url: "/portfolio/" + stockId
+   //    // }).then((data) => {
+   //    //    console.log(data);
+   //    window.location.replace("/portfolio");
+   //    // });
+   // });
 
    $(".detailBtn").on("click", (event) => {
       event.preventDefault();
@@ -69,4 +71,15 @@ $(document).ready(() => {
    // // console.log(data.changePercent);
    // console.log("done done done!");
 
-});
+   $("#add3").on("click", () => {
+      console.log("clicked");
+      const favorite = {
+         name: $("#tesla-name").text(),
+         currentPrice: $("#priceTesla").text(),
+         dailyChange: $("#changePercentTesla").text()
+      }
+   $.post("/add/stocks", favorite, function(favData) {
+      window.location.href="/portfolio";
+   })
+
+})});
