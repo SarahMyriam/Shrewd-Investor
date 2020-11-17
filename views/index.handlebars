@@ -21,51 +21,14 @@
       </div>
     </div>
   </div>
+  
+<div class="main-container">
+  {{> stocks/headline}}
 
-<div class="row cards">
-<div class="card stockCard col-sm-3">
-<img class="stockImg" src="./assets/images/IBM_logo.jpeg" class="card-img-top" alt="...">
-   <div class="card-body">
-   <h5 class="card-title">IBM</h5>
-</div>
-<ul class="list-group list-group-flush">
-   <li class="list-group-item"><strong>Current Price:</strong> <span id="priceIBM"></span></li>
-   <li class="list-group-item"><strong> Today's Change:</strong> <span id="changepercentageIBM"></span></li>
-   <li class="list-group-item" button type="button"> Get the Facts </li>
-   <li class="list-group-item portfolioBtn" button type="button" id="add1"> Add to Portfolio</li>
-</ul>
-</div>
+  {{> stocks/ibm}}
 
-<div class="card stockCard col-sm-3">
-<img class="stockImg" src="./assets/images/Biogen-Logo.png" class="card-img-top" alt="...">
-   <div class="card-body">
-   <h5 class="card-title">Biogen</h5>
-</div>
-<ul class="list-group list-group-flush">
-   <li class="list-group-item"><strong>Current Price:</strong> <span id="priceBiogen"></span></li>
-   <li class="list-group-item"><strong>Today's Change:</strong> <span id="changepercentageBiogen"></span></li>
-   <li class="list-group-item" button type="button"> Get the Facts </li>
-   <li class="list-group-item portfolioBtn" button type="button" id="add2"> Add to Portfolio</li>
-</ul>
-</div>
+  {{> stocks/biogen}}
 
-<div class="card stockCard col-sm-3">
-<img class="stockImg"src="./assets/images/teslalogo.jpg" class="card-img-top" alt="...">
-   <div class="card-body">
-   <h5 class="card-title">Tesla</h5>
-</div>
-<ul class="list-group list-group-flush portfolio-form">
-   <li class="list-group-item"><strong>Current Price:</strong> <span id="priceTesla"></span></li>
-   <li class="list-group-item"><strong>Today's Change:</strong> <span id="changepercentageTesla"></span></li>
-   <li class="list-group-item" button type="button"> Get the Facts </li>
-   <li class="list-group-item portfolioBtn" button type="button" id="add3"> Add to Portfolio</li>
-</ul>
-</div>
+  {{> stocks/tesla}}
 
-   {{!-- <li class="list-group-item portfolioBtn" button type="button" id="add4"> Go to Virtual Portfolio</li> --}}
-
-</div>
-
-
-</div>
 </div>

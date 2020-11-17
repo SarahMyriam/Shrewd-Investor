@@ -42,5 +42,11 @@ module.exports = function(app) {
       //  .then()
    });
 
+   app.get("/IBMdetails", (req, res) => {
+      res.render("IBMdetails");
+      //  table.findAll()
+      //  .then()
+   });
+
 
 };

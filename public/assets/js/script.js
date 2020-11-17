@@ -33,5 +33,19 @@ $(document).ready(() => {
       // });
    });
 
+   $(".detailBtn").on("click", (event) => {
+      event.preventDefault();
+      console.log("I was clicked!!!");
+      // const stockId = $(this).children(".stock_id").val();
+      // console.log(stockId);
+      // $.ajax({
+      //    method: "PUT",
+      //    url: "/portfolio/" + stockId
+      // }).then((data) => {
+      //    console.log(data);
+      window.location.replace("/IBMdetails");
+      // });
+   });
+
 
 });
