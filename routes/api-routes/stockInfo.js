@@ -3,6 +3,11 @@ const router = express.Router();
 require("dotenv").config();
 console.log(process.env.API_KEY);
 const axios = require("axios");
+const db = require("../../models");
+// Requiring our custom middleware for checking if a user is logged in
+const isAuthenticated = require("../../config/middleware/isAuthenticated");
+
+
 //get stock info for IBM
 router.get("/IBM", (req, res, next) => {
    // console.log("I am here");
@@ -71,5 +76,25 @@ router.get("/BIIB", (req, res, next) => {
          res.status(500);
          next(err);
       });
+});
+
+router.post("/", isAuthenticated, (req, res)=> {
+   req.body.UserId = req.session.passport.user.id;
+   db.Stock.create(req.body).then((results)=> {
+      res.json(results);
+   });
+   
+});
+
+router.get("/", isAuthenticated, (req, res)=> {
+   const userId = req.session.passport.user.id;
+   db.User.findOne({
+      where: {
+         id: userId
+      }, 
+      include: [db.Stock]
+   }).then((results)=> {
+      res.json(results);
+   });
 });
 module.exports = router;

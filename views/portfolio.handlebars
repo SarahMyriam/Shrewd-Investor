@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Shrewd Investor</title>
 </head>
 <body>
 
-<nav class="navbar navbar-default">
+  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">Logout</a>
-      <a class="navbar-brand" href="/members">Home</a>
+      <a class="navbar-brand" href="/logout">
+        Logout
+      </a>
     </div>
   </div>
 </nav>
-
 <div class="jumbotron jumbotron-fluid">
 <div class="container">
    <img class="schrewdLogo" src="./assets/images/ShrewdLogo.png"> 
@@ -25,7 +25,55 @@
 
 
   <h1>Hello!</h1>
+<div class="main-container">
 
-  
+<div class="row cards">
+<div class="card stockCard col-sm-3">
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item"><strong>Facebook</strong></li>
+   <li class="list-group-item"><strong>Current Price:</strong> <span id="facebook"></span></li>
+   <li class="list-group-item"><strong> Today's Change:</strong> <span id="changepercentagefacebook"></span></li>
+   <li class="list-group-item detailBtn" button type="button"> Get the Facts </li>
+   <li class="list-group-item portfolioBtn" button type="button" id="facebookBtn"> Add to Portfolio</li>
+</ul>
+
+</div>
+</div>
+
+<div class="row cards">
+<div class="card stockCard col-sm-3">
+<ul class="list-group list-group-flush">
+  <li class="list-group-item"><strong>Microsoft</strong></li>
+   <li class="list-group-item"><strong>Current Price:</strong> <span id="microsoft"></span></li>
+   <li class="list-group-item"><strong> Today's Change:</strong> <span id="changepercentagemicrosoft"></span></li>
+   <li class="list-group-item detailBtn" button type="button"> Get the Facts </li>
+   <li class="list-group-item portfolioBtn" button type="button" id="microsoftBtn"> Add to Portfolio</li>
+</ul>
+
+</div>
+</div>
+
+
+
+<div class="row cards">
+<div class="card stockCard col-sm-3">
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item"><strong>Exxon</strong></li>
+   <li class="list-group-item"><strong>Current Price:</strong> <span id="exxon"></span></li>
+   <li class="list-group-item"><strong> Today's Change:</strong> <span id="changepercentageexxon"></span></li>
+   <li class="list-group-item detailBtn" button type="button"> Get the Facts </li>
+   <li class="list-group-item portfolioBtn" button type="button" id="exxonBtn"> Add to Portfolio</li>
+</ul>
+
+
+</div>
+</div>
+
+
+  </div>
+
+
 </body>
 </html>
