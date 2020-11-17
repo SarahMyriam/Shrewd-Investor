@@ -67,3 +67,14 @@ ul {
 .light-text {
   color: #65dba4;
 }
+
+
+footer {
+  width: 100%;
+  background-color: rgba(220, 220, 220, 0.954);
+  padding-top: 20px;
+  text-align: center;
+  position: static   ;
+  height: 15%;
+  margin-top: 75px;
+}
