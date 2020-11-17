@@ -18,5 +18,15 @@ module.exports = function (sequelize, DataTypes) {
       }
    });
 
+   Stock.associate = function(models) {
+      // We're saying that a Stock should belong to a User
+      // A Stock can't be created without a User due to the foreign key constraint
+      Stock.belongsTo(models.User, {
+         foreignKey: {
+            allowNull: false
+         }
+      });
+   };
+
    return Stock;
 };
