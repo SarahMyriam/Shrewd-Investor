@@ -20,10 +20,6 @@ router.get("/IBM", (req, res, next) => {
          //    optionally return data created
          console.log("IBM");
          res.json(data);
-         console.log(data.companyName);
-         console.log(data.iexRealtimePrice);
-         console.log(data.change);
-         console.log(data.changePercent);
       })
       .catch(err => {
          console.log(err);
@@ -43,10 +39,6 @@ router.get("/TSLA", (req, res, next) => {
          //    optionally return data created
          console.log("Tesla");
          res.json(data);
-         console.log(data.companyName);
-         console.log(data.iexRealtimePrice);
-         console.log(data.change);
-         console.log(data.changePercent);
       })
       .catch(err => {
          console.log(err);
@@ -66,10 +58,6 @@ router.get("/BIIB", (req, res, next) => {
          //    optionally return data created
          console.log("Biogen");
          res.json(data);
-         console.log(data.companyName);
-         console.log(data.iexRealtimePrice);
-         console.log(data.change);
-         console.log(data.changePercent);
       })
       .catch(err => {
          console.log(err);
@@ -80,7 +68,12 @@ router.get("/BIIB", (req, res, next) => {
 
 router.post("/", isAuthenticated, (req, res)=> {
    req.body.UserId = req.session.passport.user.id;
-   db.Stock.create(req.body).then((results)=> {
+   const favoriteObject = {
+      name: req.body.name,
+      price: req.body.price,
+      changePercent: req.body.changePercent
+   }
+   db.Stock.create(favoriteObject).then((results)=> {
       res.json(results);
    });
    

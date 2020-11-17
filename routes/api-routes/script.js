@@ -22,31 +22,32 @@ $(document).ready(() => {
    $(".portfolioBtn").on("click", (event) => {
       event.preventDefault();
       console.log("I was clicked!!!");
-      // const stockId = $(this).children(".stock_id").val();
-      // console.log(stockId);
-      // $.ajax({
-      //    method: "PUT",
-      //    url: "/portfolio/" + stockId
-      // }).then((data) => {
-      //    console.log(data);
       window.location.replace("/portfolio");
-      // });
    });
 
    $(".detailBtn").on("click", (event) => {
       event.preventDefault();
       console.log("I was clicked!!!");
-      // const stockId = $(this).children(".stock_id").val();
-      // console.log(stockId);
-      // $.ajax({
-      //    method: "PUT",
-      //    url: "/portfolio/" + stockId
-      // }).then((data) => {
-      //    console.log(data);
       window.location.replace("/IBMdetails");
-      // });
    });
 
+   $("#add3").on("click", (event) => {
+      event.preventDefault();
+      console.log("I was clicked!!!");
+      const favorite = {
+         name: $("teslaName").text(),
+         price: $("#priceTesla").text(),
+         changePercent: $("#changePercentageTesla").text()
+      };
+      $.post("/", favorite, getFavs);
+      window.location.replace("/");
+   });
+
+   function getFavs () {
+      $.get("/", function(data) {
+         res.render("portfolio", {favorite_data: data})
+       });
+   }
 
 
    //New feature: save API data as a sequelize object - not working
