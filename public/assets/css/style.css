@@ -18,6 +18,15 @@ body {
   height: 100px;
 }
 
+.virtualBtn {
+  margin-left: 80%;
+  width: 25%;
+  background-color: #65dba4 ;
+  color: black;
+  text-align: center;
+
+}
+
 .cards{
   margin-left: 10%;
 }

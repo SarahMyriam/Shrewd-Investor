@@ -1,0 +1,42 @@
+<div class="jumbotron jumbotron-fluid">
+<div class="container">
+    <img class="schrewdLogo" src="./assets/images/ShrewdLogo.png"> 
+    <h1 class="Schrewdtitle"> Shrewd Investor - an Online Investing Game! </h1>
+</div>
+</div>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+        <h2 class="light-text">Welcome <span class="member-name" id="user-Name"></span></h2>
+        </div>
+    </div>
+    </div>	
+    
+    
+    <div class="col-md-6 text-center" class="task">
+			<div class="row">
+		{{#each stock_data}}
+			{{#unless this.portfolio}}
+				<div class="col-md-9 text-center">
+					<pre>{{this.id}}. {{this.stock_name}}
+					</pre>
+				<!-- {{this.Date}} -->
+				</div>
+				<div class="col-md-3 text-center">
+					<form class="portfolio-form ">
+						<input input type="hidden" class="stock_id" type="text" value={{this.id}}><br>
+					</form>
+				</div>
+				{{/unless}}
+			{{/each}}
+			</div>
+		</div>
+		<div class="col-md-6 text-center" class="task">
+			{{#each stock_data}}
+			{{#if this.portfolio}}
+			<input class="form-control" type="text" placeholder="{{this.id}} . {{this.stock_name}}" readonly>
+				{{/if}}
+			{{/each}}
+		</div>
+	</div>
+</div>
