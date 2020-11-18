@@ -21,10 +21,6 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Requiring our routes
-require("./routes/userHtmlRoutes.js")(app);
-require("./routes/userApiRoute.js")(app);
-
 const exphbs = require("express-handlebars");
 
 app.engine(
@@ -36,7 +32,9 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-// var routes = require("./controllers/burgersController.js");
+// Requiring our routes
+require("./routes/userHtmlRoutes.js")(app);
+require("./routes/userApiRoute.js")(app);
 
 app.use("/api", apiRoutes);
 app.use(htmlRoutes);
@@ -45,7 +43,7 @@ app.use(htmlRoutes);
 app.use(errorHandler);
 
 // drops all tables on eevery restart
-db.sequelize.sync().then(async () => {
+db.sequelize.sync({force: true}).then(async () => {
    // seed db
    // await seed(db.Test);
 

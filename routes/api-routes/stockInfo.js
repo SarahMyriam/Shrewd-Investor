@@ -14,7 +14,7 @@ router.get("/IBM", (req, res, next) => {
    const IBM = "IBM";
    axios
       .get(`https://cloud.iexapis.com/stable/stock/${IBM}/quote?token=${process.env.API_KEY}`
-      ).then( ({ data }) => {
+      ).then(({ data }) => {
          //   console.log(data);
          //   res.redirect("/");
          //    optionally return data created
@@ -25,7 +25,7 @@ router.get("/IBM", (req, res, next) => {
          console.log(err);
          res.status(500);
          next(err);
-      });       
+      });
 });
 //get stock info for tesla
 router.get("/TSLA", (req, res, next) => {
@@ -33,7 +33,7 @@ router.get("/TSLA", (req, res, next) => {
    const TSLA = "TSLA";
    axios
       .get(`https://cloud.iexapis.com/stable/stock/${TSLA}/quote?token=${process.env.API_KEY}`
-      ).then( ({ data }) => {
+      ).then(({ data }) => {
          //   console.log(data);
          //   res.redirect("/");
          //    optionally return data created
@@ -52,7 +52,7 @@ router.get("/BIIB", (req, res, next) => {
    const BIIB = "BIIB";
    axios
       .get(`https://cloud.iexapis.com/stable/stock/${BIIB}/quote?token=${process.env.API_KEY}`
-      ).then( ({ data }) => {
+      ).then(({ data }) => {
          //   console.log(data);
          //   res.redirect("/");
          //    optionally return data created
@@ -66,27 +66,30 @@ router.get("/BIIB", (req, res, next) => {
       });
 });
 
-router.post("/", isAuthenticated, (req, res)=> {
-   req.body.UserId = req.session.passport.user.id;
+//routes from "/api/stocks"
+router.post("/", isAuthenticated, (req, res) => {
+   console.log(req.body);
+   console.log("stocks route");
+   req.body.UserId = req.user.id;
    const favoriteObject = {
-      name: req.body.name,
-      price: req.body.price,
-      changePercent: req.body.changePercent
+     UserId: req.user.id,
+     StockId: req.body.stockId
    }
-   db.Stock.create(favoriteObject).then((results)=> {
-      res.json(results);
-   });
-   
+
+   db.FavStock.create(favoriteObject)
+      .then(results => res.json(results))
+      .catch(e => console.log(e.message));
+
 });
 
-router.get("/", isAuthenticated, (req, res)=> {
+router.get("/", isAuthenticated, (req, res) => {
    const userId = req.session.passport.user.id;
    db.User.findOne({
       where: {
          id: userId
-      }, 
+      },
       include: [db.Stock]
-   }).then((results)=> {
+   }).then((results) => {
       res.json(results);
    });
 });

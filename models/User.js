@@ -24,11 +24,17 @@ module.exports = function(sequelize, DataTypes) {
    });
 
    User.associate = function(models) {
-      // Associating User with Stocks
+      // Associating User with FavStock
       // When a User is deleted, also delete any associated Stocks
-      User.hasMany(models.Stock, {
-         onDelete: "cascade"
+      User.belongsToMany(models.Stock, {
+         through: models.FavStock,
+         foreignKey: {
+            onDelete: "cascade"
+         }
       });
+
+      console.log("Associate user");
+      console.log(User);
    };
    
    // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
