@@ -69,7 +69,8 @@ $(document).ready(() => {
    // // console.log(data.changePercent);
    // console.log("done done done!");
 
-   $("#add1").on("click", (event) => {
+   // IBM
+   $("#post1").on("click", (event) => {
       event.preventDefault();
       console.log("I was clicked!!!");
       // const stockId = $(this).children(".stock_id").val();
@@ -83,23 +84,85 @@ $(document).ready(() => {
       });
    });
    
-
-   $("#post1").on("click", (event) => {
+   $("#add1").on("click", (event) => {
       event.preventDefault();
       console.log("I was clicked!!!");
-      // const stockId = $(this).children(".stock_id").val();
-      // console.log(stockId);
-      const newStock = {
-         name: "IBMYYYY!",
-         symbol: "IBM",
-         price: 100,
-         changePercent: 0.2
-      };
-      // submitStock(newStock)
 
+      const newStock = {
+         name: "International Business Machines",
+         symbol: "IBM",
+         price: 118.7,
+         changePercent: 0.06
+      };
 
       $.post("/api/stocks", newStock, () => {
          console.log(newStock);
+         alert("Peter, IBM stock was added to your portfolio!");
+      });
+
+   });
+
+
+
+
+
+   // Biogen
+   $("#post2").on("click", (event) => {
+      event.preventDefault();
+
+      $.ajax({
+         method: "GET",
+         url: "/api/stocks"
+      }).then((data) => {
+         console.log(data);
+      });
+   });
+   
+   $("#add2").on("click", (event) => {
+      event.preventDefault();
+      const newStock = {
+         name: "Biogen",
+         symbol: "BIIB",
+         price: 246.9,
+         changePercent: -0.07
+      };
+
+      $.post("/api/stocks", newStock, () => {
+         console.log(newStock);
+         alert("Peter, Biogen stock was added to your portfolio!");
+      });
+
+   });
+
+
+
+
+
+
+   // Tesla
+   $("#post3").on("click", (event) => {
+      event.preventDefault();
+      $.ajax({
+         method: "GET",
+         url: "/api/stocks"
+      }).then((data) => {
+         console.log(data);
+      });
+   });
+   
+   $("#add3").on("click", (event) => {
+      event.preventDefault();
+
+      const newStock = {
+         name: "Tesla",
+         symbol: "TSLA",
+         price: 479.55,
+         changePercent: 0.08
+      };
+
+      $.post("/api/stocks", newStock, () => {
+         console.log(newStock);
+         alert("Peter, Tesla stock was added to your portfolio!");
       });
 
    });

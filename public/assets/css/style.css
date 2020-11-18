@@ -78,3 +78,25 @@ footer {
   height: 15%;
   margin-top: 75px;
 }
+
+#changepercentageTesla {
+  color: green;
+  /* color: white; */
+}
+
+#changepercentageBiogen {
+  color: red;
+}
+
+#changepercentageIBM {
+  color: orange;
+}
+
+/* #btest {
+  background-color: orange
+} */
+
+/* #tli {
+  border-radius: 25px;
+  background-color: green;
+} */
