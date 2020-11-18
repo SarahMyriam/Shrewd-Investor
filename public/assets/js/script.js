@@ -19,7 +19,7 @@ $(document).ready(() => {
 
 
 
-   $(".portfolioBtn").on("click", (event) => {
+   $("#add4").on("click", (event) => {
       event.preventDefault();
       console.log("I was clicked!!!");
       // const stockId = $(this).children(".stock_id").val();
@@ -33,19 +33,19 @@ $(document).ready(() => {
       // });
    });
 
-   $(".detailBtn").on("click", (event) => {
-      event.preventDefault();
-      console.log("I was clicked!!!");
-      // const stockId = $(this).children(".stock_id").val();
-      // console.log(stockId);
-      // $.ajax({
-      //    method: "PUT",
-      //    url: "/portfolio/" + stockId
-      // }).then((data) => {
-      //    console.log(data);
-      window.location.replace("/IBMdetails");
-      // });
-   });
+   // $(".detailBtn").on("click", (event) => {
+   //    event.preventDefault();
+   //    console.log("I was clicked!!!");
+   //    // const stockId = $(this).children(".stock_id").val();
+   //    // console.log(stockId);
+   //    // $.ajax({
+   //    //    method: "PUT",
+   //    //    url: "/portfolio/" + stockId
+   //    // }).then((data) => {
+   //    //    console.log(data);
+   //    window.location.replace("/IBMdetails");
+   //    // });
+   // });
 
 
 
@@ -68,5 +68,40 @@ $(document).ready(() => {
    // });
    // // console.log(data.changePercent);
    // console.log("done done done!");
+
+   $("#add1").on("click", (event) => {
+      event.preventDefault();
+      console.log("I was clicked!!!");
+      // const stockId = $(this).children(".stock_id").val();
+      // console.log(stockId);
+      $.ajax({
+         method: "GET",
+         url: "/api/stocks"
+      }).then((data) => {
+         console.log(data);
+      // window.location.replace("/portfolio");
+      });
+   });
+   
+
+   $("#post1").on("click", (event) => {
+      event.preventDefault();
+      console.log("I was clicked!!!");
+      // const stockId = $(this).children(".stock_id").val();
+      // console.log(stockId);
+      const newStock = {
+         name: "IBMYYYY!",
+         symbol: "IBM",
+         price: 100,
+         changePercent: 0.2
+      };
+      // submitStock(newStock)
+
+
+      $.post("/api/stocks", newStock, () => {
+         console.log(newStock);
+      });
+
+   });
 
 });
