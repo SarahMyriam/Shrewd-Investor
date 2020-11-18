@@ -100,3 +100,11 @@ footer {
   border-radius: 25px;
   background-color: green;
 } */
+
+.hide {
+  display: none;
+}
+
+.peter {
+  margin: auto;
+}

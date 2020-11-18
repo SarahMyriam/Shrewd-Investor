@@ -73,6 +73,7 @@ $(document).ready(() => {
    $("#post1").on("click", (event) => {
       event.preventDefault();
       console.log("I was clicked!!!");
+      $("#surp").show();
       // const stockId = $(this).children(".stock_id").val();
       // console.log(stockId);
       $.ajax({
@@ -80,7 +81,7 @@ $(document).ready(() => {
          url: "/api/stocks"
       }).then((data) => {
          console.log(data);
-      // window.location.replace("/portfolio");
+         window.location.replace("/ibm111");
       });
    });
    
@@ -115,6 +116,7 @@ $(document).ready(() => {
          url: "/api/stocks"
       }).then((data) => {
          console.log(data);
+         window.location.replace("/bio222");
       });
    });
    
@@ -147,6 +149,7 @@ $(document).ready(() => {
          url: "/api/stocks"
       }).then((data) => {
          console.log(data);
+         window.location.replace("/tes333");
       });
    });
    
