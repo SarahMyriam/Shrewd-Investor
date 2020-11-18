@@ -5,11 +5,10 @@ body {
 }
 
 .jumbotron {
-  height: 300px;
+  /* height: 250px; */
   background-color: #eeeeeed5;
   color: #212121;
   text-align: center;
-  font: 20px;
   border-bottom: 5pt solid cornflowerblue;
 }
 
@@ -17,6 +16,7 @@ body {
   width: 100px;
   height: 100px;
 }
+
 
 .virtualBtn {
   margin-left: 80%;
