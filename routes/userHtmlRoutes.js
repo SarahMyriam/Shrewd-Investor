@@ -49,4 +49,10 @@ module.exports = function(app) {
    });
 
 
+   app.get("/lesson", (req, res) => {
+      res.render("lesson");
+      //  table.findAll()
+      //  .then()
+   });
+
 };

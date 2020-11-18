@@ -167,4 +167,14 @@ $(document).ready(() => {
 
    });
 
+
+   $("#add5").on("click", (event) => {
+      event.preventDefault();
+      console.log("I was clicked!!!");
+
+      window.location.replace("/lesson");
+      // });
+   });
+
+
 });
