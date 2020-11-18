@@ -126,3 +126,8 @@ footer {
 .peter {
   margin: auto;
 }
+
+#myChart {
+  margin: auto;
+  background-color: #65dba4;
+}

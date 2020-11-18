@@ -80,4 +80,10 @@ module.exports = function(app) {
       //  .then()
    });
 
+   app.get("/lesson2", (req, res) => {
+      res.render("lesson2");
+      //  table.findAll()
+      //  .then()
+   });
+
 };

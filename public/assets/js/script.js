@@ -179,6 +179,14 @@ $(document).ready(() => {
       // });
    });
 
+   $("#add6").on("click", (event) => {
+      event.preventDefault();
+      console.log("I was clicked!!!");
+
+      window.location.replace("/lesson2");
+      // });
+   });
+
 
 });
 
@@ -249,3 +257,30 @@ function updateGradient()
 }
  
 setInterval(updateGradient,10);
+
+
+
+
+
+// Our labels along the x-axis
+const years = [1975,1980,1985,1990,1995,2000,2005,2010,2015,2020];
+// For drawing the lines
+const ibmL = [12,16,31,26,24,111,80,120,110,116];
+const asia = [282,350,411,502,635,809,947,1402,3700,5267];
+const europe = [168,170,178,190,203,276,408,547,675,734];
+const latinAmerica = [40,20,10,16,24,38,74,167,508,784];
+const northAmerica = [6,3,2,2,7,26,82,172,312,433];
+
+const ctx = document.getElementById("myChart");
+const myChart = new Chart(ctx, {
+   type: "line",
+   data: {
+      labels: years,
+      datasets: [
+         { 
+            data: ibmL,
+            label: "IBM - long-term"
+         }
+      ]
+   }
+});
