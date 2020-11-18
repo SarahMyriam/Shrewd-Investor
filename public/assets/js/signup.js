@@ -4,6 +4,9 @@ $(document).ready(() => {
    const emailInput = $("input#email-input");
    const passwordInput = $("input#password-input");
    const nameInput = $("input#name-input");
+   const sfxRight = new Audio("assets/sfx/correct.wav");
+   const sfxWrong = new Audio("assets/sfx/incorrect.wav");
+
 
    // When the signup button is clicked, we validate the email and password are not blank
    signUpForm.on("submit", (event) => {
@@ -15,6 +18,7 @@ $(document).ready(() => {
       };
 
       if (!userData.email || !userData.password || !userData.name) {
+         sfxWrong.play();
          alert("Please fill out all the fields!");
          return;
       }
@@ -23,6 +27,8 @@ $(document).ready(() => {
       emailInput.val("");
       passwordInput.val("");
       nameInput.val("");
+
+      sfxRight.play();
    });
 
    // Does a post to the signup route. If successful, we are redirected to the members page
