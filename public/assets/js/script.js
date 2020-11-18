@@ -98,7 +98,7 @@ $(document).ready(() => {
 
       $.post("/api/stocks", newStock, () => {
          console.log(newStock);
-         alert("Robert, IBM stock was added to your portfolio!");
+         alert("IBM stock was added to your portfolio!");
       });
 
    });
@@ -131,7 +131,7 @@ $(document).ready(() => {
 
       $.post("/api/stocks", newStock, () => {
          console.log(newStock);
-         alert("Robert, BIIB stock was added to your portfolio!");
+         alert("BIIB stock was added to your portfolio!");
       });
 
    });
@@ -165,7 +165,7 @@ $(document).ready(() => {
 
       $.post("/api/stocks", newStock, () => {
          console.log(newStock);
-         alert("Robert, TSLA stock was added to your portfolio!");
+         alert("TSLA stock was added to your portfolio!");
       });
 
    });
