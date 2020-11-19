@@ -49,4 +49,41 @@ module.exports = function(app) {
    });
 
 
+   app.get("/lesson", (req, res) => {
+      res.render("lesson");
+      //  table.findAll()
+      //  .then()
+   });
+
+
+   app.get("/ibm111", (req, res) => {
+      res.render("ibm111");
+      //  table.findAll()
+      //  .then()
+   });
+
+   app.get("/bio222", (req, res) => {
+      res.render("bio222");
+      //  table.findAll()
+      //  .then()
+   });
+
+   app.get("/tes333", (req, res) => {
+      res.render("tes333");
+      //  table.findAll()
+      //  .then()
+   });
+
+   app.get("/lesson", (req, res) => {
+      res.render("lesson");
+      //  table.findAll()
+      //  .then()
+   });
+
+   app.get("/lesson2", (req, res) => {
+      res.render("lesson2");
+      //  table.findAll()
+      //  .then()
+   });
+
 };
