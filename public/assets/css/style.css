@@ -1,8 +1,22 @@
-body {
+/* body {
   width: 100%;
   background-color:#212121;
 
-}
+} */
+
+body{
+  background-color: #000000;
+    padding: 0px;
+    margin: 0px;
+  }
+ 
+ #gradient
+ {
+   width: 100%;
+   height: 800px;
+   padding: 0px;
+   margin: 0px;
+ }
 
 .jumbotron {
   height: 300px;
@@ -68,6 +82,10 @@ ul {
   color: #65dba4;
 }
 
+.light-text2 {
+  color: white;
+}
+
 
 footer {
   width: 100%;
@@ -77,4 +95,39 @@ footer {
   position: static   ;
   height: 15%;
   margin-top: 75px;
+}
+
+#changepercentageTesla {
+  color: green;
+  /* color: white; */
+}
+
+#changepercentageBiogen {
+  color: red;
+}
+
+#changepercentageIBM {
+  color: orange;
+}
+
+/* #btest {
+  background-color: orange
+} */
+
+/* #tli {
+  border-radius: 25px;
+  background-color: green;
+} */
+
+.hide {
+  display: none;
+}
+
+.peter {
+  margin: auto;
+}
+
+#myChart {
+  margin: auto;
+  background-color: #65dba4;
 }
