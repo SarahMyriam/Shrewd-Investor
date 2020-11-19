@@ -7,13 +7,14 @@ const db = require("../../models");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../../config/middleware/isAuthenticated");
 
+const API_KEY = "pk_c651b2c4163d4e3aa0cadc5bfa3623a3";
 
 //get stock info for IBM
 router.get("/IBM", (req, res, next) => {
    // console.log("I am here");
    const IBM = "IBM";
    axios
-      .get(`https://cloud.iexapis.com/stable/stock/${IBM}/quote?token=${process.env.API_KEY}`
+      .get(`https://cloud.iexapis.com/stable/stock/${IBM}/quote?token=${API_KEY}`
       ).then( ({ data }) => {
          //   console.log(data);
          //   res.redirect("/");
@@ -36,7 +37,7 @@ router.get("/TSLA", (req, res, next) => {
    console.log("I am here");
    const TSLA = "TSLA";
    axios
-      .get(`https://cloud.iexapis.com/stable/stock/${TSLA}/quote?token=${process.env.API_KEY}`
+      .get(`https://cloud.iexapis.com/stable/stock/${TSLA}/quote?token=${API_KEY}`
       ).then( ({ data }) => {
          //   console.log(data);
          //   res.redirect("/");
@@ -59,7 +60,7 @@ router.get("/BIIB", (req, res, next) => {
    console.log("I am here");
    const BIIB = "BIIB";
    axios
-      .get(`https://cloud.iexapis.com/stable/stock/${BIIB}/quote?token=${process.env.API_KEY}`
+      .get(`https://cloud.iexapis.com/stable/stock/${BIIB}/quote?token=${API_KEY}`
       ).then( ({ data }) => {
          //   console.log(data);
          //   res.redirect("/");
