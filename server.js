@@ -4,11 +4,16 @@ const passport = require("./config/passport");
 const apiRoutes = require("./routes/api-routes");
 const htmlRoutes = require("./routes/html-routes");
 const db = require("./models");
+const compression = require("compression");
 // const seed = require("./utils/seed");
 const errorHandler = require("./utils/errorHandler");
 
+
+
 const PORT = process.env.PORT || 3000;
 const app = express();
+
+app.use(compression());
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
