@@ -16,9 +16,7 @@ router.get("/IBM", (req, res, next) => {
    axios
       .get(`https://cloud.iexapis.com/stable/stock/${IBM}/quote?token=${API_KEY}`
       ).then( ({ data }) => {
-         //   console.log(data);
-         //   res.redirect("/");
-         //    optionally return data created
+
          console.log("IBM");
          res.json(data);
          console.log(data.companyName);
@@ -39,9 +37,7 @@ router.get("/TSLA", (req, res, next) => {
    axios
       .get(`https://cloud.iexapis.com/stable/stock/${TSLA}/quote?token=${API_KEY}`
       ).then( ({ data }) => {
-         //   console.log(data);
-         //   res.redirect("/");
-         //    optionally return data created
+
          console.log("Tesla");
          res.json(data);
          console.log(data.companyName);
@@ -62,9 +58,7 @@ router.get("/BIIB", (req, res, next) => {
    axios
       .get(`https://cloud.iexapis.com/stable/stock/${BIIB}/quote?token=${API_KEY}`
       ).then( ({ data }) => {
-         //   console.log(data);
-         //   res.redirect("/");
-         //    optionally return data created
+
          console.log("Biogen");
          res.json(data);
          console.log(data.companyName);
